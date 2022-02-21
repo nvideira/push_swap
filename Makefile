@@ -6,7 +6,7 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/02/20 23:07:20 by nvideira         ###   ########.fr        #
+#    Updated: 2022/02/21 20:27:01 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ SOURCES=	print_list.c\
 			llist_functions.c\
 			swap.c\
 			push.c\
+			rotate.c\
+			revrot.c\
 			main.c
 
 NAME=		push_swap

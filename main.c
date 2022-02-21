@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:16:52 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/21 02:30:19 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/21 20:27:50 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ int	main(int argc, char *argv[])
 	while (argc-- > 1)
 		store_args(&stack_a, argv[i--]);
 	print_list(stack_a);
-	push_a(&stack_a, &stack_b);
-	print_stack(stack_a);
-	print_stack(stack_b);
-	push_b(&stack_b, &stack_a);
+	rev_rot_a(&stack_a);
 	print_stack(stack_a);
 	print_stack(stack_b);
 	printf("%d\n", stack_size(&stack_a));
