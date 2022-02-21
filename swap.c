@@ -6,23 +6,41 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:27:11 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/16 00:49:06 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:25:12 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libps.h"
 
-void	swap_a(t_targs **a)
+void	swap_a(t_targs *a)
 {
+	int	helper;
+
+	helper = a->next->content;
+	a->next->content = a->content;
+	a->content = helper;
 	write(1, "sa\n", 3);
 }
 
-void	swap_b(t_targs **b)
+void	swap_b(t_targs *b)
 {
+	int	helper;
+
+	helper = b->next->content;
+	b->next->content = b->content;
+	b->content = helper;
 	write(1, "sb\n", 3);
 }
 
-void	swap_ss(t_targs **a, t_targs **b)
+void	swap_ss(t_targs *a, t_targs *b)
 {
+	int	helper;
+
+	helper = a->next->content;
+	a->next->content = a->content;
+	a->content = helper;
+	helper = b->next->content;
+	b->next->content = b->content;
+	b->content = helper;
 	write(1, "ss\n", 3);
 }

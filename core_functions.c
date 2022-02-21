@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   store_args.c                                       :+:      :+:    :+:   */
+/*   core_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:46:30 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/14 19:06:45 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/19 22:13:46 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,19 @@ void	store_args(t_targs **lst, char *arg)
 
 	number = ft_atoi(arg);
 	lst_add_front(&(*lst), ft_new_node(number));
+}
+
+int	stack_size(t_targs **stk)
+{
+	unsigned int	count;
+	t_targs			*temp;
+
+	temp = *stk;
+	count = 0;
+	while (temp != NULL)
+	{
+		count++;
+		temp = temp->next;
+	}
+	return (count);
 }

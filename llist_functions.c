@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:12:44 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/14 20:08:31 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:29:09 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	lst_add_front(t_targs **lst, t_targs *new)
 	{
 		new->next = *lst;
 		new->prev = NULL;
+		(*lst)->prev = new;
 	}
 	*lst = new;
 }
@@ -56,4 +57,10 @@ void	lst_add_back(t_targs **lst, t_targs *new)
 		help->next = new;
 		new->prev = help;
 	}
+}
+
+void	lstdelone(t_targs *lst, void (*del)(int))
+{
+	del(lst->content);
+	free(lst);
 }
