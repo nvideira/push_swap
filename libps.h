@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/21 20:45:31 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/24 02:06:33 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ void	push(t_targs **a, t_targs **b);
 void	rotate(t_targs **a);
 void	rev_rot(t_targs **a);
 int		stack_size(t_targs **stk);
+int		check_inputs(char **arg);
 #endif
