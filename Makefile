@@ -6,7 +6,7 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/02/24 02:18:37 by nvideira         ###   ########.fr        #
+#    Updated: 2022/02/28 00:00:17 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SOURCES=	print_list.c\
 			rotate.c\
 			revrot.c\
 			main.c\
-			checks.c
+			checks.c\
+			3inputs.c
 
 NAME=		push_swap
 OBJECTS=	$(SOURCES:.c=.o)
@@ -43,7 +44,7 @@ norm:
 	norminette ./*.c
 
 debug:
-	$(CC) -g $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT) && lldb $(NAME) 25 36 52 85 79 654 254 -125 4521 -5425
+	$(CC) -g $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT) && lldb $(NAME) 1 3 2
 	
 valgrind: 
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) 25 36 52 85 79 654 254 -125 4521 -5425

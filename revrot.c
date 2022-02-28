@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:27:42 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/21 20:45:46 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/28 02:49:36 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rev_rot(t_targs **a)
 	temp->prev = NULL;
 	(*a)->prev = temp;
 	*a = (*a)->prev;
-	//write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
 //void	rev_rot_b(t_targs **b)

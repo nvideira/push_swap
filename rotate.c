@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:27:33 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/21 20:45:00 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/28 02:49:44 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rotate(t_targs **a)
 	new->prev = end;
 	end->next = new;
 	new->next = NULL;
-	//write(1, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
 //void	rotate_b(t_targs **b)
