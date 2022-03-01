@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:16:52 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/28 02:28:57 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/02/28 21:39:33 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 void	begin_al(int *argc, t_targs **stack_a, t_targs **stack_b)
 {
+	*stack_b = NULL;
 	if (*argc == 3)
 	{
 		if ((*stack_a)->content > (*stack_a)->next->content)
 			swap(&(*stack_a));
 	}
 	else if (*argc == 4)
-		three_args(&(*stack_a), &(*stack_b));
+		three_args(&(*stack_a));
+	else if (*argc == 6)
+	
 }
 
 int	main(int argc, char *argv[])

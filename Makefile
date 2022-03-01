@@ -6,7 +6,7 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/02/28 00:00:17 by nvideira         ###   ########.fr        #
+#    Updated: 2022/02/28 21:40:16 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SOURCES=	print_list.c\
 			revrot.c\
 			main.c\
 			checks.c\
-			3inputs.c
+			few_args.c
 
 NAME=		push_swap
 OBJECTS=	$(SOURCES:.c=.o)
