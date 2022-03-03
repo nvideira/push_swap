@@ -6,13 +6,13 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:27:25 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/27 22:47:42 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/02 22:23:26 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libps.h"
 
-void	push(t_targs **a, t_targs **b)
+void	push(t_targs **a, t_targs **b, char direction)
 {
 	t_targs	*old;
 
@@ -29,25 +29,8 @@ void	push(t_targs **a, t_targs **b)
 	old->next = NULL;
 	old->prev = NULL;
 	lst_add_front(&(*b), old);
-	write(1, "pa\n", 3);
+	if (direction == 'a')
+		write(1, "pa\n", 3);
+	else if (direction == 'b')
+		write(1, "pb\n", 3);
 }
-
-//void	push_b(t_targs **b, t_targs **a)
-//{
-//	t_targs	*old;
-
-//	if (stack_size(&(*b)) == 0)
-//		return ;
-//	old = *b;
-//	if ((*b)->next != NULL)
-//	{
-//		*b = (*b)->next;
-//		(*b)->prev = NULL;
-//	}
-//	else
-//		*b = NULL;
-//	old->next = NULL;
-//	old->prev = NULL;
-//	lst_add_front(&(*a), old);
-//	write(1, "pb\n", 3);
-//}

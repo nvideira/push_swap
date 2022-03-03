@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/28 20:38:10 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:35:32 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ t_targs	*ft_new_node(int content);
 void	print_list(t_targs *lst);
 void	print_stack(t_targs *lst);
 void	print_back(t_targs *lst);
-void	swap(t_targs **a);
-//void	swap_b(t_targs *b);
-//void	swap_ss(t_targs *a, t_targs *b);
-void	push(t_targs **a, t_targs **b);
-//void	push_b(t_targs **b, t_targs **a);
-void	rotate(t_targs **a);
-void	rev_rot(t_targs **a);
+void	swap(t_targs **a, char stack);
+void	swap_ss(t_targs **a, t_targs **b);
+void	push(t_targs **a, t_targs **b, char direction);
+void	rotate(t_targs **a, char stack);
+void	rotate_rr(t_targs **a, t_targs **b);
+void	rev_rot(t_targs **a, char stack);
+void	rev_rot_rrr(t_targs **a, t_targs **b);
 int		stack_size(t_targs **stk);
 int		check_inputs(char **arg);
 void	three_args(t_targs **stack_a);

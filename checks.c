@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 23:37:59 by nvideira          #+#    #+#             */
-/*   Updated: 2022/02/28 21:29:15 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/03 00:40:05 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	no_2_of_kind(char **arg)
 	return (1);
 }
 
-int	check_inputs(char **arg)
+int	is_int(char **arg)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -57,7 +57,34 @@ int	check_inputs(char **arg)
 		i++;
 		j = 0;
 	}
+	return (1);
+}
+
+int	not_big(char **arg)
+{
+	unsigned int	i;
+	int				number;
+	char			*back;
+
+	i = 1;
+	while (arg[i])
+	{
+		number = ft_atoi(arg[i]);
+		back = ft_itoa(number);
+		if (ft_strncmp(arg[i], back, ft_strlen(arg[i])) != 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_inputs(char **arg)
+{
+	if (!is_int(&(*arg)))
+		return (0);
 	if (!no_2_of_kind(&(*arg)))
+		return (0);
+	if (!not_big(&(*arg)))
 		return (0);
 	return (1);
 }
