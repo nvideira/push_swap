@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   few_args.c                                         :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 22:18:20 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/02 21:36:45 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/05 17:55:24 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	three_args(t_targs **stack_a)
 	}
 }
 
-//void	five_args(t_targs **stack_a, t_targs **stack_b)
+//void	more_args(t_targs **stack_a, t_targs **stack_b)
 //{
-	
 //}
