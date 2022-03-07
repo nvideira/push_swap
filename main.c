@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:16:52 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/02 22:20:10 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:53:44 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	begin_alg(int *argc, t_targs **stack_a, t_targs **stack_b)
 {
-	*stack_b = NULL;
 	if (*argc == 3)
 	{
 		if ((*stack_a)->content > (*stack_a)->next->content)
@@ -22,8 +21,18 @@ void	begin_alg(int *argc, t_targs **stack_a, t_targs **stack_b)
 	}
 	else if (*argc == 4)
 		three_args(&(*stack_a));
-	//else if (*argc == 6)
-	
+	else if (*argc == 5)
+		do_four(&(*stack_a), &(*stack_b));
+	else
+		more_args(&(*stack_a), &(*stack_b));
+}
+
+void	store_args(t_targs **lst, char *arg)
+{
+	int		number;
+
+	number = ft_atoi(arg);
+	lst_add_front(&(*lst), ft_new_node(number));
 }
 
 int	main(int argc, char *argv[])
@@ -44,4 +53,11 @@ int	main(int argc, char *argv[])
 	while (arghelp-- > 1)
 		store_args(&stack_a, argv[i--]);
 	begin_alg(&argc, &stack_a, &stack_b);
+	print_stack(stack_a);
+	//print_stack(stack_b);
+	while (stack_a != NULL)
+	{
+		free(stack_a);
+		stack_a = stack_a->next;
+	}
 }

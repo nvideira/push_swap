@@ -6,7 +6,7 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/03/05 18:24:03 by nvideira         ###   ########.fr        #
+#    Updated: 2022/03/06 23:19:04 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ norm:
 	norminette ./*.c
 
 debug:
-	$(CC) -g $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT) && lldb $(NAME) 487684767545474 55 89
+	$(CC) -g $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT) && lldb $(NAME) 56 32 98 2 88 45 36 855 77 14 5 88899 322 47
 	
 valgrind: 
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) 43 2 1

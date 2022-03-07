@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 23:37:59 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/03 00:40:05 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/06 23:26:27 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	no_2_of_kind(char **arg)
 	{
 		while (arg[j])
 		{
-			if (ft_strncmp(arg[i], arg[j], ft_strlen(arg[i])) == 0)
+			if (ft_strncmp(arg[i], arg[j], (ft_strlen(arg[i]) + ft_strlen(arg[j]))) == 0)
 				return (0);
 			j++;
 		}
@@ -66,14 +66,17 @@ int	not_big(char **arg)
 	int				number;
 	char			*back;
 
-	i = 1;
-	while (arg[i])
+	i = 0;
+	while (arg[++i])
 	{
 		number = ft_atoi(arg[i]);
 		back = ft_itoa(number);
 		if (ft_strncmp(arg[i], back, ft_strlen(arg[i])) != 0)
+		{
+			free(back);
 			return (0);
-		i++;
+		}
+		free(back);
 	}
 	return (1);
 }

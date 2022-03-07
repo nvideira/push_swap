@@ -6,11 +6,30 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 22:18:20 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/05 17:55:24 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/07 02:09:10 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libps.h"
+
+void	do_four(t_targs **stack_a, t_targs **stack_b)
+{
+	int	position;
+
+	position = find_small(&(*stack_a));
+	if (position == 2)
+		rotate(&(*stack_a), 'a');
+	else if (position == 3)
+	{
+		rotate(&(*stack_a), 'a');
+		rotate(&(*stack_a), 'a');
+	}
+	else if (position == 4)
+		rev_rot(&(*stack_a), 'a');
+	push(&(*stack_a), &(*stack_b), 'a');
+	three_args(&(*stack_a));
+	push(&(*stack_b), &(*stack_a), 'b');
+}
 
 void	three_args(t_targs **stack_a)
 {
@@ -41,6 +60,13 @@ void	three_args(t_targs **stack_a)
 	}
 }
 
-//void	more_args(t_targs **stack_a, t_targs **stack_b)
-//{
-//}
+void	more_args(t_targs **stack_a, t_targs **stack_b)
+{
+	all_but_3(&(*stack_a), &(*stack_b));
+	three_args(&(*stack_a));
+	while (stack_size(&(*stack_b)) > 0)
+	{
+		push(&(*stack_b), &(*stack_a), 'b');
+		print_stack(*stack_a);
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/02 21:35:32 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/07 00:18:45 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,8 @@ void	rev_rot_rrr(t_targs **a, t_targs **b);
 int		stack_size(t_targs **stk);
 int		check_inputs(char **arg);
 void	three_args(t_targs **stack_a);
+void	do_four(t_targs **stack_a, t_targs **stack_b);
+void	more_args(t_targs **stack_a, t_targs **stack_b);
+int		find_small(t_targs **stack);
+void	all_but_3(t_targs **stack_a, t_targs **stack_b);
 #endif
