@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:16:52 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/07 01:53:44 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:25:05 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ int	main(int argc, char *argv[])
 	while (arghelp-- > 1)
 		store_args(&stack_a, argv[i--]);
 	begin_alg(&argc, &stack_a, &stack_b);
-	print_stack(stack_a);
-	//print_stack(stack_b);
 	while (stack_a != NULL)
 	{
 		free(stack_a);

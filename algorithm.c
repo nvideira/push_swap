@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 22:18:20 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/07 02:09:10 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/22 02:13:35 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	do_four(t_targs **stack_a, t_targs **stack_b)
 	}
 	else if (position == 4)
 		rev_rot(&(*stack_a), 'a');
-	push(&(*stack_a), &(*stack_b), 'a');
+	push(&(*stack_a), &(*stack_b), 'b');
 	three_args(&(*stack_a));
-	push(&(*stack_b), &(*stack_a), 'b');
+	push(&(*stack_b), &(*stack_a), 'a');
 }
 
 void	three_args(t_targs **stack_a)
@@ -65,8 +65,5 @@ void	more_args(t_targs **stack_a, t_targs **stack_b)
 	all_but_3(&(*stack_a), &(*stack_b));
 	three_args(&(*stack_a));
 	while (stack_size(&(*stack_b)) > 0)
-	{
-		push(&(*stack_b), &(*stack_a), 'b');
-		print_stack(*stack_a);
-	}
+		push(&(*stack_b), &(*stack_a), 'a');
 }

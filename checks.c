@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 23:37:59 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/06 23:26:27 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:30:41 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	no_2_of_kind(char **arg)
 {
 	unsigned int	i;
 	unsigned int	j;
+	size_t			len;
 
 	i = 1;
 	j = i + 1;
@@ -23,7 +24,8 @@ int	no_2_of_kind(char **arg)
 	{
 		while (arg[j])
 		{
-			if (ft_strncmp(arg[i], arg[j], (ft_strlen(arg[i]) + ft_strlen(arg[j]))) == 0)
+			len = ft_strlen(arg[i]) + ft_strlen(arg[j]);
+			if (ft_strncmp(arg[i], arg[j], len) == 0)
 				return (0);
 			j++;
 		}

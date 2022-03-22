@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:46:30 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/07 01:13:14 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/22 02:12:59 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ void	all_but_3(t_targs **stack_a, t_targs **stack_b)
 				position--;
 			}
 		}
-		push(&(*stack_a), &(*stack_b), 'a');
+		push(&(*stack_a), &(*stack_b), 'b');
 	}
 }

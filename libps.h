@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/07 00:18:45 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:38:14 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	store_args(t_targs **lst, char *arg);
 void	lst_add_front(t_targs **lst, t_targs *new);
 t_targs	*lst_last(t_targs *lst);
 t_targs	*ft_new_node(int content);
+int		what_last(t_targs *lst);
 void	print_list(t_targs *lst);
 void	print_stack(t_targs *lst);
 void	print_back(t_targs *lst);
