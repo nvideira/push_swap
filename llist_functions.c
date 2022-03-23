@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:12:44 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/20 22:01:43 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/23 05:51:39 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,14 @@ void	lst_add_front(t_targs **lst, t_targs *new)
 
 t_targs	*lst_last(t_targs *lst)
 {
+	t_targs	*auxil;
+
+	auxil = lst;
 	if (!lst)
 		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	while (auxil->next != NULL)
+		auxil = auxil->next;
+	return (auxil);
 }
 
 void	lst_add_back(t_targs **lst, t_targs *new)
@@ -65,7 +68,7 @@ int	what_last(t_targs *lst)
 
 	auxil = lst;
 	if (!lst)
-		return (NULL);
+		return (0);
 	while (auxil->next != NULL)
 		auxil = auxil->next;
 	return (auxil->content);

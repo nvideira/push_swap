@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/20 22:38:14 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/23 05:04:37 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	do_four(t_targs **stack_a, t_targs **stack_b);
 void	more_args(t_targs **stack_a, t_targs **stack_b);
 int		find_small(t_targs **stack);
 void	all_but_3(t_targs **stack_a, t_targs **stack_b);
+void	different_approach(t_targs **stack_a, t_targs **stack_b);
 #endif
