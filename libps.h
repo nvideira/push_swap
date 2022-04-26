@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/23 05:04:37 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/04/24 23:55:09 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,16 @@ int		check_inputs(char **arg);
 void	three_args(t_targs **stack_a);
 void	do_four(t_targs **stack_a, t_targs **stack_b);
 void	more_args(t_targs **stack_a, t_targs **stack_b);
-int		find_small(t_targs **stack);
+int		find_small_position(t_targs **stack);
+int		find_smallest(t_targs *stack);
 void	all_but_3(t_targs **stack_a, t_targs **stack_b);
 void	different_approach(t_targs **stack_a, t_targs **stack_b);
+int		largest(t_targs *stack);
+int		third_largest(t_targs **stack);
+void	big(t_targs **stack_a, t_targs **stack_b, int first);
+void	atop_bbot(t_targs **stack_a, t_targs **stack_b, int *org);
+void	abot_btop(t_targs **stack_a, t_targs **stack_b, int *org);
+int		pos(int content, int *org);
+int		find_in_stack(t_targs *stack, int n);
+int		is_sorted(t_targs **stack);
 #endif

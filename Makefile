@@ -6,7 +6,7 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/03/23 05:43:47 by nvideira         ###   ########.fr        #
+#    Updated: 2022/04/12 10:25:12 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SOURCES=	print_list.c\
 			main.c\
 			checks.c\
 			algorithm.c\
-			redo_lots.c
+			another_attempt.c\
+			utils.c\
 
 NAME=		push_swap
 OBJECTS=	$(SOURCES:.c=.o)

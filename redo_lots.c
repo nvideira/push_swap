@@ -6,11 +6,13 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 02:06:44 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/23 06:05:24 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:24:11 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libps.h"
+
+/*very unefficient! don't use this!*/
 
 //void	find_easiest(t_targs **stack_a, t_targs **stack_b)
 //{
@@ -35,13 +37,13 @@
 //	}
 //}
 
-int	largest(t_targs **stack)
+int	largest(t_targs *stack)
 {
 	int		compare;
 	t_targs	*temp;
 
-	compare = (*stack)->content;
-	temp = *stack;
+	compare = stack->content;
+	temp = stack;
 	while (temp != NULL)
 	{
 		if (compare < temp->content)
@@ -58,7 +60,7 @@ int	third_largest(t_targs **stack)
 	int		compare;
 
 	temp = *stack;
-	biggest = largest(&(*stack));
+	biggest = largest(*stack);
 	compare = 0;
 	while (temp != NULL)
 	{
@@ -79,52 +81,88 @@ int	third_largest(t_targs **stack)
 	return (compare);
 }
 
-void	different_approach(t_targs **stack_a, t_targs **stack_b)
-{
-	while (stack_size(&(*stack_a)) > 3)
-	{
-		while (stack_size(&(*stack_b)) <= 1)
-		{
-			if ((*stack_a)->content < third_largest(&(*stack_a)))
-				push(&(*stack_a), &(*stack_b), 'b');
-			else
-				rotate(&(*stack_a), 'a');
-		}
-		if ((*stack_a)->content >= third_largest(&(*stack_a)))
-			rotate(&(*stack_a), 'a');
-		else if ((*stack_b)->content < (*stack_b)->next->content
-			&& (*stack_a)->content > (*stack_a)->next->content)
-			swap_ss(&(*stack_a), &(*stack_b));
-		else if ((*stack_b)->content < (*stack_b)->next->content)
-			swap(&(*stack_b), 'b');
-		else if ((*stack_a)->content > (*stack_a)->next->content)
-			swap(&(*stack_a), 'a');
-		else if ((*stack_a)->content > (*stack_b)->content
-			&& (*stack_a)->content < what_last(*stack_b))
-			push(&(*stack_a), &(*stack_b), 'b');
-		else
-		{
-			if ((*stack_a)->content > (*stack_b)->next->content
-				&& (*stack_a)->content < (*stack_b)->content)
-				rotate(&(*stack_b), 'b');
-			else if (what_last(*stack_a) > (*stack_b)->content
-				&& what_last(*stack_a) < what_last(*stack_b))
-				rev_rot(&(*stack_a), 'a');
-			else if ((*stack_a)->next->content > (*stack_b)->next->content
-				&& (*stack_a)->next->content < (*stack_b)->content)
-				rotate_rr(&(*stack_a), &(*stack_b));
-			else if (what_last(*stack_a) > what_last(*stack_b)
-				&& lst_last(*stack_b)->prev->content > what_last(*stack_a))
-				rev_rot_rrr(&(*stack_a), &(*stack_b));
-			else if ((*stack_a)->content > what_last(*stack_b)
-				&& (*stack_a)->content < lst_last(*stack_b)->prev->content)
-				rev_rot(&(*stack_b), 'b');
-			else
-				push(&(*stack_a), &(*stack_b), 'b');
-		}
-	}
-	three_args(&(*stack_a));
-	while (stack_size(&(*stack_b)) > 0)
-		push(&(*stack_b), &(*stack_a), 'a');
-}
-/*KO*/
+//void	different_approach(t_targs **stack_a, t_targs **stack_b)
+//{
+//	int	position;
+
+//	while (stack_size(&(*stack_b)) <= 1)
+//	{
+//		if ((*stack_a)->content < third_largest(&(*stack_a)))
+//			push(&(*stack_a), &(*stack_b), 'b');
+//		else
+//			rotate(&(*stack_a), 'a');
+//	}
+//	while (stack_size(&(*stack_a)) > 3)
+//	{
+//		if ((*stack_a)->content >= third_largest(&(*stack_a)))
+//			rotate(&(*stack_a), 'a');
+//		else if ((*stack_a)->content > (*stack_b)->content)
+//		{
+//			if ((*stack_a)->next->content < (*stack_a)->content
+//				&& (*stack_a)->next->content > (*stack_b)->content)
+//				swap(&(*stack_a), 'a');
+//			else if (what_last(*stack_b) > (*stack_b)->content
+//				&& (*stack_a)->content > what_last(*stack_b))
+//				rev_rot(stack_b, 'b');
+//			else
+//				push(&(*stack_a), &(*stack_b), 'b');
+//		}
+//		else if ((*stack_a)->content < find_smallest(&(*stack_b)))
+//		{
+//			position = find_small_position(&(*stack_b));
+//			if (position < stack_size(stack_b) / 2)
+//			{
+//				while (position--)
+//					rotate(stack_b, 'b');
+//			}
+//			else
+//			{
+//				while (position++ < stack_size(stack_b))
+//					rev_rot(stack_b, 'b');
+//			}
+//			push(stack_a, stack_b, 'b');
+//			rotate(stack_b, 'b');
+//		}
+//		else if ((*stack_b)->content < (*stack_b)->next->content
+//			&& (*stack_a)->content < (*stack_a)->next->content)
+//			swap_ss(&(*stack_a), &(*stack_b));
+//		else if ((*stack_b)->content < (*stack_b)->next->content)
+//			swap(&(*stack_b), 'b');
+//		else if ((*stack_a)->content < (*stack_a)->next->content
+//			&& (*stack_a)->next->content < third_largest(&(*stack_a)))
+//			swap(&(*stack_a), 'a');
+//		else if ((*stack_a)->content < (*stack_b)->content
+//			&& (*stack_a)->next->content > (*stack_b)->content
+//			&& (*stack_a)->next->content < third_largest(&(*stack_a)))
+//			rotate(&(*stack_a), 'a');
+//		else if ((*stack_a)->content < (*stack_b)->content
+//			&& what_last(*stack_a) > (*stack_b)->content
+//			&& what_last(*stack_a) < third_largest(&(*stack_a)))
+//			rev_rot(&(*stack_a), 'a');
+//		else if ((*stack_a)->content < (*stack_b)->content
+//			&& (*stack_a)->content > (*stack_b)->next->content
+//			&& (*stack_a)->content < third_largest(&(*stack_a)))
+//			rotate(&(*stack_b), 'b');
+//		else if ((*stack_a)->content < (*stack_b)->content
+//			&& (*stack_a)->content > what_last(*stack_b))
+//			rev_rot(&(*stack_b), 'b');
+//		else
+//		{
+//			while ((*stack_b)->content > (*stack_a)->content)
+//				rotate(stack_b, 'b');
+//			push(stack_a, stack_b, 'b');
+//		}
+//		//print_stack(*stack_b);
+//		//sleep(2);
+//		//print_stack(*stack_a);
+//	}
+//	while (what_last(*stack_b) > (*stack_b)->content)
+//		rev_rot(stack_b, 'b');
+//	//print_stack(*stack_b);
+//	//sleep(2);
+//	three_args(&(*stack_a));
+//	//print_stack(*stack_a);
+//	while (stack_size(&(*stack_b)) > 0)
+//		push(stack_b, stack_a, 'a');
+//	//print_stack(*stack_a);
+//}

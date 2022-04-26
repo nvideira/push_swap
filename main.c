@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:16:52 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/23 05:21:03 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/04/24 23:55:21 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	begin_alg(int *argc, t_targs **stack_a, t_targs **stack_b)
 	if (*argc == 3)
 	{
 		if ((*stack_a)->content > (*stack_a)->next->content)
-			swap(&(*stack_a), 'a');
+			swap(stack_a, 'a');
 	}
 	else if (*argc == 4)
-		three_args(&(*stack_a));
+		three_args(stack_a);
 	else if (*argc == 5)
-		do_four(&(*stack_a), &(*stack_b));
+		do_four(stack_a, stack_b);
 	else
-		different_approach(&(*stack_a), &(*stack_b));
+		big(stack_a, stack_b, 1);
 }
 
 void	store_args(t_targs **lst, char *arg)

@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 22:18:20 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/22 02:13:35 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/03/27 02:01:13 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	do_four(t_targs **stack_a, t_targs **stack_b)
 {
 	int	position;
 
-	position = find_small(&(*stack_a));
+	position = find_small_position(&(*stack_a));
 	if (position == 2)
 		rotate(&(*stack_a), 'a');
 	else if (position == 3)
