@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:46:23 by nvideira          #+#    #+#             */
-/*   Updated: 2022/03/06 23:31:27 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/05/02 03:39:34 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ void	print_list(t_targs *lst)
 			printf("%d - ", lst->content);
 		lst = lst->next;
 	}
+}
+
+int	arr_len(int *arr)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (arr[i] != '\0')
+		i++;
+	return (i);
 }
 
 void	print_stack(t_targs *lst)
@@ -48,4 +58,17 @@ void	print_back(t_targs *lst)
 			printf("%d - ", index->content);
 		index = index->prev;
 	}
+}
+
+void	print_array(int *org)
+{
+	int	i;
+
+	i = 0;
+	while (i < arr_len(org))
+	{
+		printf(" %d ", org[i]);
+		i++;
+	}
+	printf("\n");
 }

@@ -6,22 +6,19 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/04/12 10:25:12 by nvideira         ###   ########.fr        #
+#    Updated: 2022/05/03 04:47:14 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES=	print_list.c\
-			core_functions.c\
-			llist_functions.c\
-			swap.c\
-			push.c\
-			rotate.c\
-			revrot.c\
 			main.c\
 			checks.c\
-			algorithm.c\
-			another_attempt.c\
-			utils.c\
+			core_functions.c\
+			llist_functions.c\
+			push_and_swap.c\
+			rotates.c\
+			three_or_four.c\
+			radix.c\
 
 NAME=		push_swap
 OBJECTS=	$(SOURCES:.c=.o)
@@ -29,7 +26,7 @@ OBJECTS=	$(SOURCES:.c=.o)
 LIBFT=		Libft/libft.a
 LIBFT_DIR=	libft
 CC=			gcc
-CFLAGS=		-Wall -Werror -Wextra
+CFLAGS=		-Wall -Werror -Wextra -g
 
 all: $(NAME)
 	
@@ -52,7 +49,8 @@ debug:
 	$(CC) -g $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT)
 	
 valgrind: 
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) 43 2 1
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes\
+		./$(NAME) -498 -381 496 668 -187 186 0 711 827 -896 -60 833 -62 854
 	
 clean:
 	@rm -f $(OBJECTS)
