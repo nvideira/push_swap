@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/05/03 05:09:11 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/05/03 05:10:41 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include "./Libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_struct {
 	int				content;
