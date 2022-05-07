@@ -1,16 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   three_or_four.c                                    :+:      :+:    :+:   */
+/*   three_four_five.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 22:18:20 by nvideira          #+#    #+#             */
-/*   Updated: 2022/05/03 04:03:16 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/05/05 04:17:04 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libps.h"
+
+void	hi_five(t_targs **stack_a, t_targs **stack_b)
+{
+	int	position;
+
+	while (stack_size(stack_a) > 3)
+	{
+		position = find_small_position(stack_a);
+		if (position > stack_size(stack_a) / 2)
+		{
+			while (stack_size(stack_a) + 1 - position > 0)
+			{
+				rev_rot(stack_a, 'a');
+				position++;
+			}
+		}
+		else
+		{
+			while (position-- > 1)
+				rotate(stack_a, 'a');
+		}
+		push(stack_a, stack_b, 'b');
+	}
+	three_args(stack_a);
+	if ((*stack_b)->content < (*stack_b)->next->content)
+		swap(stack_b, 'b');
+	push(stack_b, stack_a, 'a');
+	push(stack_b, stack_a, 'a');
+}
 
 void	do_four(t_targs **stack_a, t_targs **stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 16:37:58 by nvideira          #+#    #+#             */
-/*   Updated: 2022/05/03 05:10:41 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/05/07 22:57:41 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		stack_size(t_targs **stk);
 void	lst_add_front(t_targs **lst, t_targs *new);
 t_targs	*ft_new_node(int content);
 t_targs	*lst_last(t_targs *lst);
+int		is_sorted(t_targs *stack);
 
 /*--------push_and_swap.c--------*/
 

@@ -6,7 +6,7 @@
 /*   By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:12:44 by nvideira          #+#    #+#             */
-/*   Updated: 2022/05/03 04:39:22 by nvideira         ###   ########.fr       */
+/*   Updated: 2022/05/05 04:26:40 by nvideira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,15 @@ t_targs	*lst_last(t_targs *lst)
 	while (auxil->next != NULL)
 		auxil = auxil->next;
 	return (auxil);
+}
+
+int	is_sorted(t_targs *stack)
+{
+	while (stack->next != NULL)
+	{
+		if (stack->next->content < stack->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
