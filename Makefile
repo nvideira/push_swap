@@ -6,18 +6,17 @@
 #    By: nvideira <nvideira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 18:26:46 by nvideira          #+#    #+#              #
-#    Updated: 2022/05/03 04:47:14 by nvideira         ###   ########.fr        #
+#    Updated: 2022/05/05 03:50:18 by nvideira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES=	print_list.c\
-			main.c\
+SOURCES=	main.c\
 			checks.c\
 			core_functions.c\
 			llist_functions.c\
 			push_and_swap.c\
 			rotates.c\
-			three_or_four.c\
+			three_four_five.c\
 			radix.c\
 
 NAME=		push_swap
